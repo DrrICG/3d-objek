@@ -11,6 +11,11 @@ const scrollToViewerBtn = document.querySelector('#scrollToViewer');
 const objectButtons = document.querySelectorAll('[data-object]');
 
 const scene = new THREE.Scene();
+const gridHelper = new THREE.GridHelper(10, 10);
+scene.add(gridHelper);
+
+const axesHelper = new THREE.AxesHelper(5);
+scene.add(axesHelper);
 scene.fog = new THREE.Fog(0x07111f, 12, 32);
 
 const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
