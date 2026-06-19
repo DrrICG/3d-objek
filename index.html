@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Website katalog objek 3D interaktif yang bisa dirotasi 360 derajat, siap dipakai di GitHub Pages." />
+  <title>Katalog Objek 3D 360°</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Navigasi utama">
+      <a class="brand" href="#top" aria-label="Kembali ke awal halaman">
+        <span class="brand-mark">3D</span>
+        <span class="brand-text">Object Gallery</span>
+      </a>
+      <a class="github-pill" href="#panduan">Siap GitHub Pages</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Interactive 3D Web Experience</p>
+        <h1>5 Objek 3D yang Bisa Dirotasi 360°</h1>
+        <p class="hero-lead">
+          Pilih objek, putar dengan mouse atau sentuhan, zoom, lalu eksplorasi bentuknya dari semua sisi.
+          Semua objek dibuat langsung dari geometri Three.js, sehingga tidak membutuhkan file model tambahan.
+        </p>
+        <div class="hero-actions" aria-label="Kontrol utama">
+          <button class="primary-btn" id="scrollToViewer" type="button">Lihat Objek 3D</button>
+          <button class="secondary-btn" id="toggleAutoRotate" type="button" aria-pressed="true">Auto Rotate: ON</button>
+        </div>
+      </div>
+
+      <div class="viewer-card" id="viewerSection" aria-label="Area tampilan objek tiga dimensi">
+        <div class="viewer-toolbar">
+          <div>
+            <p class="viewer-label">Objek aktif</p>
+            <h2 id="objectTitle">Roket Eksplorasi</h2>
+          </div>
+          <button id="resetView" class="icon-btn" type="button" title="Reset kamera">Reset</button>
+        </div>
+
+        <div id="canvasWrap" class="canvas-wrap">
+          <canvas id="threeCanvas" aria-label="Objek 3D interaktif"></canvas>
+          <div id="loading" class="loading">Memuat 3D...</div>
+        </div>
+
+        <div class="viewer-hint">
+          <span>Drag</span> putar 360° · <span>Scroll/pinch</span> zoom · <span>Klik tombol</span> ganti objek
+        </div>
+      </div>
+    </section>
+
+    <section class="objects-section" aria-labelledby="pilih-objek">
+      <div class="section-heading">
+        <p class="eyebrow">Object Library</p>
+        <h2 id="pilih-objek">Pilih 5 Objek 3D</h2>
+        <p>Setiap tombol akan mengganti model di viewer tanpa reload halaman.</p>
+      </div>
+
+      <div class="object-grid" id="objectButtons" aria-label="Daftar objek 3D">
+        <button class="object-card active" type="button" data-object="rocket">
+          <span class="object-icon">🚀</span>
+          <strong>Roket Eksplorasi</strong>
+          <small>Badan roket, sirip, jendela, dan api pendorong.</small>
+        </button>
+        <button class="object-card" type="button" data-object="robot">
+          <span class="object-icon">🤖</span>
+          <strong>Robot Asisten</strong>
+          <small>Kepala, badan, tangan, kaki, mata, dan antena.</small>
+        </button>
+        <button class="object-card" type="button" data-object="car">
+          <span class="object-icon">🏎️</span>
+          <strong>Mobil Sport</strong>
+          <small>Bodi aerodinamis, roda, lampu, dan spoiler.</small>
+        </button>
+        <button class="object-card" type="button" data-object="satellite">
+          <span class="object-icon">🛰️</span>
+          <strong>Satelit Orbit</strong>
+          <small>Panel surya, antena, sensor, dan modul utama.</small>
+        </button>
+        <button class="object-card" type="button" data-object="house">
+          <span class="object-icon">🏠</span>
+          <strong>Rumah Modern</strong>
+          <small>Bangunan, atap, pintu, jendela, dan taman kecil.</small>
+        </button>
+      </div>
+    </section>
+
+    <section class="info-section section-grid" id="panduan">
+      <div class="panel">
+        <p class="eyebrow">Cara Pakai</p>
+        <h2>Upload ke GitHub Pages</h2>
+        <ol class="steps">
+          <li>Buat repository baru di GitHub.</li>
+          <li>Upload semua file: <code>index.html</code>, <code>style.css</code>, <code>script.js</code>, dan <code>README.md</code>.</li>
+          <li>Buka <strong>Settings → Pages</strong>.</li>
+          <li>Pilih branch <strong>main</strong> dan folder <strong>/root</strong>, lalu simpan.</li>
+          <li>Website akan tampil melalui link GitHub Pages repository tersebut.</li>
+        </ol>
+      </div>
+
+      <div class="panel feature-list">
+        <p class="eyebrow">Fitur</p>
+        <h2>Yang Sudah Ada</h2>
+        <ul>
+          <li>Rotasi objek 360° menggunakan mouse atau layar sentuh.</li>
+          <li>5 objek 3D prosedural tanpa file model tambahan.</li>
+          <li>Auto rotate, zoom, reset kamera, dan responsive layout.</li>
+          <li>Siap dijalankan sebagai website statis di GitHub Pages.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Interactive 3D Object Gallery. Built with Three.js.</p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
