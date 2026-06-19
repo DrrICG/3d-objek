@@ -451,7 +451,11 @@ scrollToViewerBtn.addEventListener('click', () => {
 window.addEventListener('resize', resizeRenderer);
 
 setupEnvironment();
-resizeRenderer();
 setObject(currentKey);
-loading.classList.add('hide');
 animate();
+
+// kasih waktu browser atur layout dulu
+setTimeout(() => {
+  resizeRenderer();              // 🔥 ini baru aman dipanggil
+  loading.classList.add('hide');
+}, 200);
