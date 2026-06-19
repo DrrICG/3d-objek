@@ -235,19 +235,17 @@ h2 {
 }
 
 .canvas-wrap {
+  width: 100%;
+  height: 500px;        /* 🔥 INI PENTING */
+  min-height: 400px;
   position: relative;
-  height: min(62vh, 620px);
-  min-height: 420px;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 50% 25%, rgba(94, 234, 212, 0.15), transparent 22rem),
-    linear-gradient(180deg, rgba(10, 26, 46, 0.8), rgba(5, 8, 22, 0.88));
+  background: #0b1020;  /* biar kelihatan area 3D */
 }
 
 #threeCanvas {
-  display: block;
   width: 100%;
   height: 100%;
+  display: block;
 }
 
 .loading {
